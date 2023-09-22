@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+/* Lesson Video: https://www.youtube.com/watch?v=fSkhTd4rpDo */
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-top: 5rem;
+  font-family: 'Montserrat', sans-serif;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.accordion{
+  width: 40rem;
+  margin: 3.125rem auto;   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.accordion-list{
+  list-style: none;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+              -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  padding: 0.625rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.accordion-title{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: .75rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+     
+}
+
+
+.accordion-title::before{
+  content: '+';
+  margin-right: .8rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+input[type='radio']{
+  display: none;
+}
+
+.accordion-paragraph{
   color: white;
+  padding: 0 0.625;
+  line-height: 1.6rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s, color 1s ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+input[type='radio']:checked + .accordion-title + .accordion-paragraph{
+  max-height: 25rem;
+  padding: .625rem .625rem 1.25rem;
+  color: rgb(39, 22, 114);
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input[type=radio]:checked + .accordion-title::before{
+  content: '-';
+}
+
+input[type=radio]:checked + .accordion-title{
+/* .accordion-list:has(input[type=radio]:checked){ */
+  animation-duration: 1.5s;
+  animation-name: slidein; 
+}
+@keyframes slidein{
+  0%{
+      transform: translateX(0px);
+      color: black;
   }
-  to {
-    transform: rotate(360deg);
+  15%{
+      transform: translateX(75px);
+      color: red;
+  }
+  100%{
+      transform: translateX(0px);
+      color: black;
   }
 }
