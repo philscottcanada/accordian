@@ -6,7 +6,7 @@ function App() {
       <ul class="accordion">
           <li class="accordion-list">
               <input type="radio" name="accordion" id="first" checked />
-              <label for="first" class="accordion-title">PhilScott</label>
+              <label for="first" class="accordion-title">Products</label>
               <div class="accordion-paragraph">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quidem iure, atque ipsa expedita corporis similique aspernatur debitis, ab nulla facere molestias, perferendis ea repellendus? Magnam veniam magni animi cumque.</p>
               </div>
